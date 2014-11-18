@@ -24,7 +24,7 @@ function r() {
 }
 function rt(x, a) {
   a.map(function(c,i) {
-    cx.fillRect(x-c*10, innerHeight/2-i*20, c*20, 20);
+    cx.fillRect(x-c*10, 400-i*20, c*20, 20);
   });
 }
 hn(x.length,x,y,z);
