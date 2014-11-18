@@ -3,6 +3,7 @@ cx=cn.getContext('2d');
 x=[5,4,3,2,1];
 y=[];
 z=[];
+q=[];
 i=0;
 function hn(n, a, b, c) {
   if(n>0) {
@@ -10,10 +11,6 @@ function hn(n, a, b, c) {
     q.push([a,c]);
     hn(n-1,b,a,c);
   }
-}
-function gq() {
-  q=[];
-  hn(x.length,x,y,z);
 }
 function r() {
   it=q[i], vl=it[0].pop();
@@ -30,5 +27,5 @@ function rt(x, a) {
     cx.fillRect(x-c*10, innerHeight/2-i*20, c*20, 20);
   });
 }
-gq();
+hn(x.length,x,y,z);
 r();
