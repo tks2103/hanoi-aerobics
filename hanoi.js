@@ -7,7 +7,13 @@ function ga(n) {
 }
 
 var can = document.getElementById("can"),
-    cx  = can.getContext("2d");
+    cx  = can.getContext("2d"),
+    WIDTH = 20,
+    MAX_WIDTH = WIDTH * 10,
+    SIZE = window.innerWidth - MAX_WIDTH;
+
+can.width = window.innerWidth;
+can.height = window.innerHeight;
 
 var Hanoi = function(twrs) {
   this.A = ga(twrs);
@@ -50,14 +56,15 @@ Hanoi.prototype = {
 
   render: function() {
     can.width = can.width;
-    this.renderTower(0, this.A);
-    this.renderTower(100, this.B);
-    this.renderTower(200, this.C);
+    this.renderTower(MAX_WIDTH, this.A);
+    this.renderTower(SIZE / 2, this.B);
+    this.renderTower(SIZE - MAX_WIDTH, this.C);
   },
 
   renderTower: function(x, ary) {
     for(var i = 0; i < ary.length; i++) {
-      cx.fillRect(10 + x, 100 - i * 10, ary[i] * 10, 10);
+      var width = ary[i] * WIDTH;
+      cx.fillRect(x - width / 2, window.innerHeight / 2 - i * WIDTH, width, WIDTH);
     }
   }
 }
