@@ -1,6 +1,6 @@
 cn=document.body.children[0],
 cx=cn.getContext('2d');
-x=[7,6,5,4,3,2,1];
+x=[5,4,3,2,1];
 y=[];
 z=[];
 i=0;
