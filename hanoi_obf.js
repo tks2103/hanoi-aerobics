@@ -1,6 +1,6 @@
 cn = document.body.children[0],
 cx = cn.getContext('2d');
-function ga(n) { return Array.apply(null, Array(n)).map(function(i, ind) { return ind; }).reverse(); }
+function ga(n) { return Array.apply(null, Array(n)).map(function(i, d) { return d; }).reverse(); }
 cn.width = 1000;
 cn.height = 600;
 x = ga(7);
@@ -27,11 +27,11 @@ function r() {
   rt(260, x);
   rt(500, y);
   rt(740, z);
-  window.setTimeout(r, 500);
+  setTimeout(r, 500);
 }
 function rt(x, a) {
   a.map(function(c,i) {
-    cx.fillRect(x - c * 5, window.innerHeight / 2 - i * 10, c*10, 10);
+    cx.fillRect(x - c * 5, innerHeight / 2 - i * 10, c*10, 10);
   });
 }
 gq();
